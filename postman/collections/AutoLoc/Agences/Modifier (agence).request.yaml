@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{baseUrl}}/api/agences/{{agenceId}}"
+method: PUT
+body:
+  type: json
+  content: |-
+    {
+      "nom": "Agence Tunis Centre (modifiée)",
+      "ville": "Tunis",
+      "adresse": "12 Avenue Habib Bourguiba",
+      "telephone": "71123456"
+    }
+scripts:
+  - type: afterResponse
+    code: pm.test("Statut 200", () => pm.response.to.have.status(200));
+    language: text/javascript
+order: 5000

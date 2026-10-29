@@ -1,0 +1,15 @@
+# Use this workspace to collaborate
+workspace:
+  id: d0f200cd-db49-4f62-8e35-46212e6e957d
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ../postman/collections/AutoLoc: 401458a2-9096-446c-9385-7f10e53f73f9
+
+# All resources in the `postman/` folder are automatically registered in Local View.
+# Point to additional files outside the `postman/` folder to register them individually. Example:
+#localResources:
+#  collections:
+#    - ../tests/E2E Test Collection/

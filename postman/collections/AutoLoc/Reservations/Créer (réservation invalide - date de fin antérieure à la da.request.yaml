@@ -1,0 +1,19 @@
+$kind: http-request
+name: "Créer (réservation invalide : date de fin antérieure à la date de début) - 400"
+url: "{{baseUrl}}/api/reservations"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+      "dateDebut": "2026-11-10",
+      "dateFin": "2026-11-01",
+      "statut": "CONFIRMEE",
+      "client": { "idClient": {{clientId}} },
+      "vehicule": { "idVehicule": {{vehiculeId}} }
+    }
+scripts:
+  - type: afterResponse
+    code: pm.test("Statut 400", () => pm.response.to.have.status(400));
+    language: text/javascript
+order: 6000

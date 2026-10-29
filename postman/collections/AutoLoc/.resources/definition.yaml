@@ -1,0 +1,2 @@
+$kind: collection
+description: "Requêtes de test de l'API AutoLoc. Prérequis : environnement « local » (variable baseUrl) sélectionné, application démarrée. Ordre : Agences, Clients, Equipements, Vehicules, Employes, Reservations, Maintenances, Contrats, Paiements, puis Suppressions."

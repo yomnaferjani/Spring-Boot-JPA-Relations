@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/api/employes/{{employeId}}"
+method: PUT
+body:
+  type: json
+  content: |-
+    {
+      "nom": "Trabelsi",
+      "prenom": "Sami",
+      "role": "MANAGER"
+    }
+scripts:
+  - type: afterResponse
+    code: pm.test("Statut 200", () => pm.response.to.have.status(200));
+    language: text/javascript
+order: 5000

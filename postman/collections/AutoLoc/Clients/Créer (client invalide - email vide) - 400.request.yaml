@@ -1,0 +1,20 @@
+$kind: http-request
+name: "Créer (client invalide : email vide) - 400"
+url: "{{baseUrl}}/api/clients"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+      "nom": "Ben Salah",
+      "prenom": "Ali",
+      "email": "",
+      "telephone": "20123456",
+      "numPermis": "P-123456",
+      "dateInscription": "2026-10-01"
+    }
+scripts:
+  - type: afterResponse
+    code: pm.test("Statut 400", () => pm.response.to.have.status(400));
+    language: text/javascript
+order: 6000
