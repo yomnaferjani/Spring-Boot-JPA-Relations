@@ -15,13 +15,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
                 description = "API REST de gestion de location de véhicules.",
                 contact = @Contact(
                         name = "Équipe AutoLoc",
-                        email = "VOTRE.ADRESSE@outlook.com",
-                        url = "https://github.com/yomnaferjani"
+                        email = "yomna.ferjani@esprit.tn",
+                        url = "https://github.com/yomnaferjani/Spring-Boot-JPA-Relations"
                 )
         ),
         externalDocs = @ExternalDocumentation(
                 description = "Dépôt Git du projet",
-                url = "https://github.com/yomnaferjani"
+                url = "https://github.com/yomnaferjani/Spring-Boot-JPA-Relations"
         )
 )
 public class AutolocApiApplication {
