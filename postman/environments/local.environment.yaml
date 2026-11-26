@@ -8,3 +8,7 @@ values:
     value: ''
   - key: employeId
     value: ''
+  - key: vehiculeId
+    value: ''
+  - key: equipementId
+    value: ''

@@ -1,5 +1,6 @@
 package tn.esprit.autolocapi.domain;
 
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -35,6 +36,7 @@ public class Vehicule {
     // ASSOCIATION : côté propriétaire, colonne id_agence
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_agence")
+   
     private Agence agence;
 
     // ASSOCIATION : ManyToMany, côté propriétaire, table vehicule_equipement (Set, aucune cascade)
@@ -46,9 +48,7 @@ public class Vehicule {
     )
     private Set<Equipement> equipements = new HashSet<>();
 
-    // ASSOCIATION : Vehicule -> Maintenance, côté inverse, cascade PERSIST
-    @OneToMany(mappedBy = "vehicule", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
-    private List<Maintenance> maintenances = new ArrayList<>();
+ 
 
     // ASSOCIATION : côté inverse de Reservation -> Vehicule, aucune cascade
     @OneToMany(mappedBy = "vehicule", fetch = FetchType.LAZY)

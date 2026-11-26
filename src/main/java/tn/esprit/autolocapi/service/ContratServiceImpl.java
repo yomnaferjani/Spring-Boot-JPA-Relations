@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 import tn.esprit.autolocapi.domain.Contrat;
 import tn.esprit.autolocapi.exception.ResourceNotFoundException;
 import tn.esprit.autolocapi.repository.IContratRepository;
-
+import tn.esprit.autolocapi.repository.IVehiculeRepository;
 @Service
 @RequiredArgsConstructor
 public class ContratServiceImpl implements IContratService {
 
     private final IContratRepository contratRepository;
-
+    private final IVehiculeRepository vehiculeRepository;
     @Override
     public Contrat create(Contrat contrat) {
         if (contrat.getIdContrat() != null) {
@@ -29,6 +29,17 @@ public class ContratServiceImpl implements IContratService {
         return contratRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Contrat", id));
     }
+
+    @Override
+    public List<Contrat> findByIdVehicule(Long idVehicule) {
+
+        if (!vehiculeRepository.existsById(idVehicule)) {
+            throw new ResourceNotFoundException("Vehicule", idVehicule);
+        }
+
+        return contratRepository.findByReservation_Vehicule_IdVehicule(idVehicule);
+    }
+
 
     @Override
     public List<Contrat> findAll() {

@@ -1,3 +1,4 @@
+
 package tn.esprit.autolocapi.service;
 
 import java.util.List;
@@ -14,4 +15,7 @@ public interface IContratService {
     Contrat update(Long id, Contrat contrat);
 
     void deleteById(Long id);
+
+    // Afficher les contrats par ID véhicule
+    List<Contrat> findByIdVehicule(Long idVehicule);
 }

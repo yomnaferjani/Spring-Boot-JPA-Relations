@@ -15,4 +15,10 @@ public interface IMaintenanceService {
     Maintenance update(Long id, Maintenance maintenance);
 
     void deleteById(Long id);
+
+    /** Affecte une maintenance existante à un véhicule existant. */
+    Maintenance affecterMaintenanceAVehicule(Long idMaintenance, Long idVehicule);
+
+    // Afficher les maintenances par ID véhicule
+    List<Maintenance> findByIdVehicule(Long idVehicule);
 }
